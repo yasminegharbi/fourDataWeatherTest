@@ -1,0 +1,76 @@
+:root{
+  --glass: rgba(255,255,255,0.12);
+  --glassBorder: rgba(255,255,255,0.16);
+  --text: rgba(255,255,255,0.92);
+}
+
+.page{min-height:100vh;position:relative;overflow:hidden;color:var(--text);font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
+.bg{position:absolute;inset:0;background-size:cover;background-position:center;transform:scale(1.03)}
+.overlay{position:absolute;inset:0;background:linear-gradient(to bottom, rgba(0,0,0,0.25), rgba(0,0,0,0.6))}
+
+.topbar{position:relative;z-index:2;display:flex;align-items:center;justify-content:space-between;padding:18px 22px}
+.brand{display:flex;gap:12px;align-items:center}
+.logo{width:44px;height:44px;border-radius:14px;display:grid;place-items:center;background:rgba(255,255,255,0.16);backdrop-filter:blur(10px);box-shadow:0 10px 24px rgba(0,0,0,0.25)}
+.title{font-weight:800;letter-spacing:0.2px}
+.subtitle{font-size:12px;opacity:0.85;margin-top:2px}
+
+.container{position:relative;z-index:2;max-width:980px;margin:0 auto;padding:20px 18px 40px}
+.card{border-radius:18px;background:var(--glass);border:1px solid var(--glassBorder);backdrop-filter:blur(12px);box-shadow:0 18px 40px rgba(0,0,0,0.25);padding:18px}
+
+.searchRow{display:flex;gap:10px;align-items:center;margin-top:10px}
+@media (max-width:520px){.searchRow{flex-direction:column;align-items:stretch}}
+
+.input{flex:1;border-radius:14px;padding:12px;border:1px solid rgba(255,255,255,0.18);background:rgba(0,0,0,0.20);color:var(--text);outline:none}
+.input::placeholder{color:rgba(255,255,255,0.6)}
+
+.btnPrimary{border:none;cursor:pointer;border-radius:14px;padding:12px 14px;font-weight:700;color:rgba(255,255,255,0.94);
+  background:linear-gradient(135deg, rgba(80,170,255,0.95), rgba(120,255,170,0.85));
+  box-shadow:0 12px 26px rgba(0,0,0,0.25)
+}
+.btnPrimary:disabled{opacity:0.65;cursor:not-allowed}
+
+.favBtn{display:inline-flex;align-items:center;gap:10px;border:1px solid rgba(255,255,255,0.18);background:rgba(255,255,255,0.12);
+  color:var(--text);border-radius:999px;padding:10px 12px;cursor:pointer;backdrop-filter:blur(10px);
+  box-shadow:0 10px 24px rgba(0,0,0,0.25);font-weight:650
+}
+.badge{display:inline-grid;place-items:center;min-width:24px;height:24px;padding:0 8px;border-radius:999px;background:rgba(120,255,170,0.9);
+  color:rgba(0,0,0,0.75);font-size:12px;font-weight:800
+}
+
+.miniBtn{border-radius:10px;padding:10px 12px;border:1px solid rgba(255,255,255,0.14);background:rgba(255,255,255,0.10);
+  color:var(--text);cursor:pointer;font-size:13px
+}
+
+.drawer{position:fixed;top:0;right:0;height:100vh;width:min(380px, 90vw);transform:translateX(110%);transition:transform 180ms ease;z-index:3;
+  background:rgba(15,20,28,0.72);border-left:1px solid rgba(255,255,255,0.14);backdrop-filter:blur(14px);box-shadow:-18px 0 40px rgba(0,0,0,0.35);
+  padding:16px;display:flex;flex-direction:column
+}
+.drawer.open{transform:translateX(0)}
+.drawerHeader{display:flex;justify-content:space-between;align-items:center;gap:10px;padding-bottom:12px;border-bottom:1px solid rgba(255,255,255,0.12)}
+.drawerTitle{font-weight:900;font-size:16px}
+.drawerSub{font-size:12px;opacity:0.8;margin-top:2px}
+.favList{list-style:none;padding:0;margin:14px 0 0;display:grid;gap:10px}
+.favItem{display:flex;justify-content:space-between;align-items:center;gap:10px;border-radius:14px;padding:10px 12px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.12)}
+
+.weatherCard{margin-top:14px;border-radius:16px;background:rgba(0,0,0,0.22);border:1px solid rgba(255,255,255,0.12);padding:14px}
+.weatherTop{display:flex;justify-content:space-between;align-items:baseline;gap:12px}
+.place{font-weight:900;font-size:16px}
+.cond{font-size:13px;opacity:0.86;margin-top:2px}
+.temp{font-size:46px;font-weight:900;letter-spacing:-1px}
+
+.weatherMeta{margin-top:12px;display:grid;grid-template-columns:repeat(3, 1fr);gap:10px}
+@media (max-width:520px){.weatherMeta{grid-template-columns:1fr}}
+.metaItem{border-radius:14px;padding:10px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.12)}
+.metaLabel{font-size:12px;opacity:0.8}
+.metaValue{margin-top:4px;font-weight:900}
+
+.divider{height:1px;background:rgba(255,255,255,0.12);margin:14px 0}
+.forecastTitle{font-size:13px;opacity:0.85;margin-bottom:10px}
+.forecastGrid{display:grid;grid-template-columns:repeat(4, 1fr);gap:10px}
+@media (max-width:700px){.forecastGrid{grid-template-columns:repeat(2, 1fr)}}
+.forecastItem{border-radius:14px;padding:10px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.12)}
+.fDay{font-weight:900;font-size:13px}
+.fTemp{margin-top:6px;display:flex;justify-content:space-between}
+.min{opacity:0.8}
+.max{font-weight:900}
+.hint{font-size:12px;opacity:0.85}

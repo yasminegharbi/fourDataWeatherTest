@@ -1,0 +1,15 @@
+# Symfony
+/fourdata-weather-back/vendor/
+/fourdata-weather-back/var/
+/fourdata-weather-back/.env.local
+/fourdata-weather-back/.env.test.local
+/fourdata-weather-back/.env.prod.local
+Commande ECHO activ‚e.
+# Node
+/fourdata-weather-front/node_modules/
+/fourdata-weather-front/dist/
+Commande ECHO activ‚e.
+# IDE/OS
+.vscode/
+.idea/
+.DS_Store
